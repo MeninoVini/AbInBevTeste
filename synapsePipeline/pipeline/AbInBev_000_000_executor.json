@@ -1,0 +1,119 @@
+{
+	"name": "AbInBev_000_000_executor",
+	"properties": {
+		"description": "Pipeline responsavel por rodar o primeiro processo do projeto.",
+		"activities": [
+			{
+				"name": "copy_data",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "AbInBev_001_001_get_data",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "bronze_nb",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "copy_data",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "AbInBev_002_001_bronze",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "silver_nb",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "bronze_nb",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "AbInBev_003_001_silver",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "gold_nb",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "silver_nb",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "AbInBev_004_001_gold",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "output_nb",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "gold_nb",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "AbInBev_005_001_output",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-06-11T23:18:06Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

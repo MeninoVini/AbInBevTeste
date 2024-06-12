@@ -1,0 +1,30 @@
+{
+	"name": "AbInBev_003_001_silver",
+	"properties": {
+		"activities": [
+			{
+				"name": "silver _nb",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Repos/vinicius.andradealex@gmail.com/AbInBevTeste/Ambev/Silver/table_1_s"
+				},
+				"linkedServiceName": {
+					"referenceName": "dtb",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-06-11T22:30:59Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

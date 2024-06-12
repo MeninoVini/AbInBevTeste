@@ -1,0 +1,17 @@
+{
+	"name": "dtb",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-2924476066745987.7.azuredatabricks.net",
+			"existingClusterId": "0611-202358-inj07hfc",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlNZTkFQU0VARUZDQkVGRjgtRDgxMi00NDFFLUI3NTgtQzYwNEE4MTM1MzRDX2FhMWU1YWIyLTcwOTAtNDQ1OS05OGJhLTU2NDIyYWJmMjkzNSINCn0="
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

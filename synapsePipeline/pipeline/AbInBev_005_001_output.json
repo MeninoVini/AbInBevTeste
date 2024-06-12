@@ -1,0 +1,30 @@
+{
+	"name": "AbInBev_005_001_output",
+	"properties": {
+		"activities": [
+			{
+				"name": "output_nb",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Repos/vinicius.andradealex@gmail.com/AbInBevTeste/Ambev/Output/Output"
+				},
+				"linkedServiceName": {
+					"referenceName": "dtb",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-06-11T22:31:07Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}
