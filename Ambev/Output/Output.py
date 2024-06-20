@@ -7,7 +7,7 @@ FROM ambev_gold.gold_layer
 df = spark.sql(query)
 
 # Storage account key
-spark.conf.set("fs.azure.account.key.abinbevteste.dfs.core.windows.net", "/2nNjzZ6SGm7ZOW8lcMxZa6kfNed57HmZ0djdHmbtvlrGbUpwBI5xIeg4EnEkTbaNReLdkYkemBO+AStUnLJ8A==")
+spark.conf.set("fs.azure.account.key.abinbevteste.dfs.core.windows.net", "Azure_key")
 
 pathOutputTemp = "abfss://teste@abinbevteste.dfs.core.windows.net/CaminhoFinal"
 
