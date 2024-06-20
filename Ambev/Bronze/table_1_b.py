@@ -24,7 +24,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import expr
 
 # Configurações de acesso ao Azure Blob Storage
-spark.conf.set("fs.azure.account.key.abinbevteste.blob.core.windows.net", "/2nNjzZ6SGm7ZOW8lcMxZa6kfNed57HmZ0djdHmbtvlrGbUpwBI5xIeg4EnEkTbaNReLdkYkemBO+AStUnLJ8A==")
+spark.conf.set("fs.azure.account.key.abinbevteste.blob.core.windows.net", "Azure_key")
 
 # Caminho do arquivo JSON no Azure Blob Storage
 blob_path = "wasbs://teste@abinbevteste.blob.core.windows.net/dir_teste/breweryTable"
